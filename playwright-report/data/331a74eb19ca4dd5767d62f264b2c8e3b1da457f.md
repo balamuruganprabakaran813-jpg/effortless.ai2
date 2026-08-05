@@ -1,0 +1,379 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: auth\signup.spec.ts >> Effortless AI Home Page >> Verify Schedule Demo page opens successfully
+- Location: tests\auth\signup.spec.ts:28:9
+
+# Error details
+
+```
+Error: expect(page).toHaveURL(expected) failed
+
+Expected pattern: /schedule|demo/i
+Received string:  "https://goeffortless.ai/"
+Timeout: 5000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 5000ms
+    12 × locator resolved to <html lang="en">…</html>
+       - unexpected value "https://goeffortless.ai/"
+
+```
+
+```yaml
+- img
+- paragraph: "Live Masterclass: Fix the process blocks slowing your business. Every Tue & Thu · 4–4:30 PM"
+- button "Save My Spot"
+- button:
+  - img
+- banner:
+  - link "Effortless-logo":
+    - /url: /
+    - img "Effortless-logo"
+  - text: Products
+  - img "resource"
+  - link "Case Studies":
+    - /url: /case-studies
+  - link "Partners":
+    - /url: /partners
+  - text: Resources
+  - img "resource"
+  - link "Login":
+    - /url: https://i.goeffortless.ai/
+    - button "Login"
+  - button "Schedule Demo arrow":
+    - text: Schedule Demo
+    - img "arrow"
+- paragraph: Say 👋 to
+- paragraph: Effortless
+- heading "The All-In-One Growth Platform for Indian Business." [level=1]
+- paragraph: Growth breaks your old tools. Effortless handles Sales, Approvals, Schemes, Expenses, Contracts, Cash, and Operational chaos — all in one place.
+- button "Get Started arrow":
+  - text: Get Started
+  - img "arrow"
+- button "secIcon See it in Action arrow":
+  - img "secIcon"
+  - text: See it in Action
+  - img "arrow"
+- img "Effortless growth platform dashboard for Indian SMBs"
+- paragraph: "Work seamlessly with:"
+- img "tallyprime-logo"
+- paragraph: Trusted by 1,000+ businesses to simplify workflows, scale faster, and eliminate 400+ hours of manual, error-prone work every month.
+- img "Rassense logo — Effortless customer"
+- img "Contraminds Labs logo — Effortless customer"
+- img "Nalashaa logo — Effortless customer"
+- img "Pepul logo — Effortless customer"
+- img "Meine Electric logo — Effortless customer"
+- img "CTRLm logo — Effortless customer"
+- img "MPL logo — Effortless customer"
+- paragraph: Growing Pains
+- heading "The Way your Business Grows is Unique. The Confusion You Face Isn't." [level=2]
+- paragraph: Every business that's scaling faces the same challenges in different forms.
+- img "Field Sales"
+- heading "Field Sales" [level=3]
+- paragraph: When Sales Grows Faster, with Manual Systems, You Don't Scale — You Struggle.
+- img "Multiple Branches"
+- heading "Multiple Branches" [level=3]
+- paragraph: You opened a New Branch to Grow — Not Lose Track of What's Going On.
+- img "Distribution Networks"
+- heading "Distribution Networks" [level=3]
+- paragraph: More Partners, More Shipments, More Receivables—Harder to Stay on Top of it All.
+- img "Multiple Suppliers & Vendors"
+- heading "Multiple Suppliers & Vendors" [level=3]
+- paragraph: Vendors grow when you grow, Complexities outgrow Everywhere — Expenses, Petty Cash, TDS, ITC, Budget Checks, Manual Approvals.
+- img "Repeat Customers"
+- heading "Repeat Customers" [level=3]
+- paragraph: Contracts are Growing, Reminders & Recurring Invoices multiply — Revenue starts slipping.
+- img "Startup Environment"
+- heading "Startup Environment" [level=3]
+- paragraph: Revenue shows Growth. Cash flow shows Health. No visibility into deals and payments? You’re flying blind.
+- button "Effortless keeps your business running—without the mess. Discover How. arrow":
+  - text: Effortless keeps your business running—without the mess. Discover How.
+  - img "arrow"
+- paragraph: The Three Use Cases
+- heading "One Platform. Three Command Centers." [level=2]
+- paragraph: Every business that’s scaling faces the same challenges in different forms.
+- img "Icon"
+- heading "Effortless Sales" [level=3]
+- paragraph: The Revenue Engine
+- paragraph: Field Team Accountability + Instant Tally Sync. Track every visit, auto-apply schemes, and sync to Tally in real-time.
+- separator
+- paragraph:
+  - img "orangeTick"
+  - text: GPS Check-ins & Live Tracking
+- paragraph:
+  - img "orangeTick"
+  - text: Smart Schemes Engine
+- paragraph:
+  - img "orangeTick"
+  - text: Live Outstanding Visibility
+- paragraph:
+  - img "orangeTick"
+  - text: Proforma to Invoice in One Click
+- paragraph:
+  - img "orangeTick"
+  - text: Automatic Tally Sync
+- paragraph:
+  - img "orangeTick"
+  - text: Owner Visibility Panel
+- button "Explore Effortless Sales arrow":
+  - text: Explore Effortless Sales
+  - img "arrow"
+- img "Icon"
+- heading "Effortless Expenses" [level=3]
+- paragraph: The Profit Guardian
+- paragraph: Stop leakage. Verify every bill. AI-powered IDP with GST/TDS compliance checks and automated approval workflows.
+- separator
+- paragraph:
+  - img "orangeTick"
+  - text: AI Powered Intelligent Data Processing (IDP)
+- paragraph:
+  - img "orangeTick"
+  - text: Live GST Defaulter Alerts
+- paragraph:
+  - img "orangeTick"
+  - text: Policy, Budget & Compliance Enforcement
+- paragraph:
+  - img "orangeTick"
+  - text: Multi-Level Approval Workflow
+- paragraph:
+  - img "orangeTick"
+  - text: Payment File Generator
+- paragraph:
+  - img "orangeTick"
+  - text: Real-Time Expense Dashboard
+- button "Explore Effortless Expenses arrow":
+  - text: Explore Effortless Expenses
+  - img "arrow"
+- img "Icon"
+- heading "Effortless Contracts" [level=3]
+- paragraph: The Recurring Revenue Module
+- paragraph: Put your revenue on autopilot. Create once, bill forever with automated reminders, renewals and seamless Tally sync.
+- separator
+- paragraph:
+  - img "orangeTick"
+  - text: Create Once. Bill Forever.
+- paragraph:
+  - img "orangeTick"
+  - text: Smart Reminders
+- paragraph:
+  - img "orangeTick"
+  - text: Two Billing Styles, One System
+- paragraph:
+  - img "orangeTick"
+  - text: Multi-Branch Visibility
+- paragraph:
+  - img "orangeTick"
+  - text: Forecast in One Screen
+- paragraph:
+  - img "orangeTick"
+  - text: Tally Sync That Just Works
+- button "Explore Effortless Contracts arrow":
+  - text: Explore Effortless Contracts
+  - img "arrow"
+- paragraph: Built for India
+- heading "Built for the Realities of Indian Business." [level=2]
+- paragraph: Every business that’s scaling faces the same challenges in different forms.
+- img "Icon"
+- paragraph: Incremental Data Load?
+- paragraph: Field teams stay productive even with little connectivity.
+- paragraph: No new fancy systems expense required.
+- img "Icon"
+- paragraph: Staff won't use it
+- paragraph: It's simpler than WhatsApp. Protects them from blame.
+- paragraph: Daily Business Snapshot on WhatsApp, Biometric Integration.
+- img "Icon"
+- paragraph: Too Complex?
+- paragraph: Branch-wise controls keep everything separate.
+- paragraph: Multi-Company Concurrent Sync, Cost Centre Income Statement.
+- img "Icon"
+- paragraph: Will Accountants Like It?
+- paragraph: They love it. Clean masters = fewer corrections.
+- paragraph: Tally (Concurrent & Bi-Directional), Audit Trail.
+- button "Effortless keeps your business running—without the mess. Discover How. arrow":
+  - text: Effortless keeps your business running—without the mess. Discover How.
+  - img "arrow"
+- paragraph: Social Proof
+- heading "Founded by Seasoned Ex-Deloitte Consultants & CAs. Used by ₹50Cr - ₹5000Cr turnover Leaders." [level=2]
+- paragraph: Thousands of Businesses already manage their growth with Effortless.
+- img "Partner logo 3"
+- img "Partner logo 4"
+- img "Partner logo 5"
+- img "Partner logo 6"
+- img "Partner logo 7"
+- img "Partner logo 8"
+- img "Partner logo 9"
+- paragraph: Effortless has brought my entire Sales and Operations team onto one platform and removed the clutter from Order to Cash Management. Now we can process orders 10X faster and seamlessly with full control.
+- paragraph: Mr. Gautham Jain
+- paragraph: Managing Director - Krish Fashion Private Limited
+- list:
+  - listitem:
+    - button "1"
+  - listitem:
+    - button "2"
+  - listitem:
+    - button "3"
+- paragraph: Security Assurance
+- heading "Secure by Design" [level=2]
+- paragraph: ISO 27001 certified. 256-bit encryption. 2-Factor authentication user access. Compliant. Your data is safe here.
+- img "Icon"
+- paragraph: 8-Levels of Security
+- paragraph: Enterprise Level Security
+- paragraph: The same security standards used by leading banks and financial institutions worldwide.
+- img "Icon"
+- paragraph: Certified Excellence
+- paragraph: ISO 27001 Certification
+- paragraph: Our systems and processes meet international standards for information security management.
+- img "Icon"
+- paragraph: Compliance Automation
+- paragraph: MSME & GST Compliance Built-In
+- paragraph: Automatically generate compliant documents and filings that meet all regulatory requirements.
+- img "Icon"
+- paragraph: Control & Transparency
+- paragraph: Secure User Roles and Audit Trail
+- paragraph: Set permissions by role and track every action in the system for complete accountability.
+- paragraph: Get Started
+- heading "Growth Doesn't Wait. Why Should You?" [level=2]
+- paragraph: Let Effortless help you grow—without the Jhanjhat.
+- paragraph: Talk to Us
+- paragraph: Have questions about how Effortless can transform your business? Our team of experts is ready to help.
+- list:
+  - listitem: Schedule a personalized demo
+  - listitem: Get your specific questions answered
+  - listitem: Discuss your unique business challenges
+- button "Request a Callback arrow":
+  - text: Request a Callback
+  - img "arrow"
+- paragraph: We'll reach out within 4 business hours
+- paragraph: Experience Effortless
+- paragraph: See Effortless in action with a personalized demo tailored to your business.
+- list:
+  - listitem: No generic presentations
+  - listitem: Focus on your specific challenges
+  - listitem: Get a clear picture of your potential ROI
+- button "Schedule Demo arrow":
+  - text: Schedule Demo
+  - img "arrow"
+- paragraph: Choose a time that works for you
+- paragraph: Your Growth Engine Starts Here
+- paragraph: More growth, less overhead. Discover how India’s fastest growing businesses do it.
+- list:
+  - listitem: Automate invoicing, collections & approvals
+  - listitem: Track sales team performance
+  - listitem: Get cashflow clarity in real-time
+- button "See it in Action arrow":
+  - text: See it in Action
+  - img "arrow"
+- paragraph: Clarity in 30 minutes. No pressure, just proof.
+- contentinfo:
+  - img "Effortless"
+  - heading "Our Offices" [level=3]
+  - heading "Chennai HQ" [level=4]
+  - text: Agrya FinLabs Pvt. Ltd. Maan Sarovar Tower, First Floor 375/271A, Scheme Rd, Teynampet, Chennai, Tamil Nadu - 600018
+  - link "Location":
+    - /url: https://maps.app.goo.gl/ZU1JDbuuFzVWnRZg9
+    - img "Location"
+  - heading "Bangalore" [level=4]
+  - text: 4th floor, 241, Tribe CoWorking, above LG showroom, Sector 6, HSR Layout, Bengaluru, Karnataka - 560102
+  - link "Location":
+    - /url: https://maps.app.goo.gl/29sAA2a3pFsMqywB6
+    - img "Location"
+  - heading "Mumbai" [level=4]
+  - text: 1206-07, Ajmera Sikova, LBS Marg, Ashok Silk Mills Ln, Ghatkopar, Mumbai, Maharashtra - 400086
+  - link "Location":
+    - /url: https://maps.app.goo.gl/KzuyVBkWb6CkeA5Q6
+    - img "Location"
+  - heading "Hyderabad" [level=4]
+  - text: 7th Floor, Vasavi MPM Grand, 824, beside Ameerpet Metro, Hyderabad, Telangana - 500073
+  - link "Location":
+    - /url: https://maps.app.goo.gl/oYDrhUz1kiL7X8jM6
+    - img "Location"
+  - heading "Products" [level=3]
+  - list:
+    - link "Sales & Collections":
+      - /url: /sales
+      - listitem: Sales & Collections
+    - link "Expense & Claims":
+      - /url: /expenses
+      - listitem: Expense & Claims
+    - link "Contract & Billing":
+      - /url: /contracts
+      - listitem: Contract & Billing
+    - link "All Product Features":
+      - /url: /allFeatures
+      - listitem: All Product Features
+  - heading "Our Customers" [level=3]
+  - list:
+    - link "Case Studies":
+      - /url: /case-studies
+      - listitem: Case Studies
+  - heading "Ecosystem" [level=3]
+  - list:
+    - link "Partners":
+      - /url: /partners
+      - listitem: Partners
+  - heading "Resources" [level=3]
+  - heading "Learn" [level=4]
+  - list:
+    - link "Blog":
+      - /url: /blogs
+      - listitem: Blog
+    - link "Webinars":
+      - /url: https://docs.google.com/forms/d/e/1FAIpQLScY9QisYn1E8Sj1vxXwvkQv6qZltjCqWzdg_DLiwtpZbak3ww/viewform
+      - listitem: Webinars
+    - link "Compliance Basics":
+      - /url: /compliance
+      - listitem: Compliance Basics
+    - link "FAQs":
+      - /url: /faqs
+      - listitem: FAQs
+  - heading "Tools" [level=4]
+  - list:
+    - link "Download Apps":
+      - /url: /download-apps
+      - listitem: Download Apps
+    - listitem: Automation ROI
+  - heading "Company" [level=4]
+  - list:
+    - link "About Us":
+      - /url: /about-us
+      - listitem: About Us
+    - link "Certifications":
+      - /url: /certifications-awards
+      - listitem: Certifications
+    - link "Contact Us":
+      - /url: /contact-us
+      - listitem: Contact Us
+  - heading "Featured" [level=4]
+  - list:
+    - link "Thinking of Migrating?":
+      - /url: /migratingFeature
+      - listitem: Thinking of Migrating?
+  - heading "Legal" [level=3]
+  - list:
+    - link "Privacy Policy":
+      - /url: /privacy-policy
+      - listitem: Privacy Policy
+    - link "Terms of Service":
+      - /url: /terms-of-service
+      - listitem: Terms of Service
+    - link "Security Practices":
+      - /url: /security-practices
+      - listitem: Security Practices
+  - link "Effortless":
+    - /url: /
+    - img "Effortless"
+  - img "Effortless on Instagram"
+  - img "Effortless on X (Twitter)"
+  - img "Effortless on LinkedIn"
+  - img "Effortless on YouTube"
+  - img "Effortless on Facebook"
+- alert
+- button "Close": ×
+- iframe
+```

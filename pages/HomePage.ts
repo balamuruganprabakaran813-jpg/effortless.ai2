@@ -12,7 +12,10 @@ export class HomePage {
     this.page = page;
     this.header = page.locator('header');
     this.loginLink = page.getByRole('link', { name: 'Login', exact: true }).first();
-    this.scheduleDemoLink = page.getByRole('link', { name: 'Schedule Demo', exact: false }).first();
+    this.scheduleDemoLink = page
+      .getByRole('link', { name: 'Schedule Demo', exact: false })
+      .or(page.getByRole('button', { name: 'Schedule Demo', exact: false }))
+      .first();
   }
 
   async navigateToHomePage(): Promise<void> {
@@ -24,6 +27,7 @@ export class HomePage {
     await expect(this.header).toBeVisible();
   }
 
+  
   async verifyHeaderModulesClickable(): Promise<void> {
     const headerLinks = this.header.getByRole('link');
     const count = await headerLinks.count();
@@ -40,8 +44,31 @@ export class HomePage {
     }
   }
 
-  async clickLogin(): Promise<void> {
+
+  async clickLogin(): Promise<Page> {
     await expect(this.loginLink).toBeVisible();
-    await this.loginLink.click();
+
+    const [popup] = await Promise.all([
+      this.page.context().waitForEvent('page', { timeout: 5_000 }).catch(() => null),
+      this.loginLink.click(),
+    ]);
+
+    const destination = popup ?? this.page;
+    await destination.waitForLoadState('domcontentloaded');
+    return destination;
   }
+
+  
+  async clickScheduleDemo(): Promise<Page> {
+    await expect(this.scheduleDemoLink).toBeVisible();
+
+    const [popup] = await Promise.all([
+      this.page.context().waitForEvent('page', { timeout: 5_000 }).catch(() => null),
+      this.scheduleDemoLink.click(),
+    ]);
+
+    const destination = popup ?? this.page;
+    await destination.waitForLoadState('domcontentloaded');
+    return destination;
   }
+}
