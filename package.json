@@ -1,0 +1,18 @@
+{
+  "name": "goeffortless-playwright-tests",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Playwright + TypeScript automation for goeffortless.ai homepage",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "codegen": "playwright codegen https://goeffortless.ai",
+    "report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.62.1",
+    "@types/node": "^26.1.2",
+    "typescript": "^5.9.3"
+  }
+}
